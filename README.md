@@ -82,7 +82,11 @@ If this was a wrong guess, then the response will be like below
 HTTP 404 - If the game id is not valid
 HTTP 409 - This error code is returned when version value passed does not match the latest game. Usually this means caller has stale data
 HTTP 400 - This error code is returned for multiple reasons as given below
+
 		 1. Game Id / Version / Guess Letter is not passed
+		 
 		 2. Game already completed with either successfully guessing the word or reached maximum unsuccessful attempts
+		 
 		 3. Passing already guessed valid or invalid letter 
+		 
 The body of this error code in the error field gives the detail on the above error
