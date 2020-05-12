@@ -95,6 +95,8 @@ HTTP 400 - This error code is returned for multiple reasons as given below
 		 
 The body of this error code in the error field gives the detail on the above error
 
+HTTP 500 - Something unexpected happened during the update of the game
+
 # Schema
 
 The schema for game is stored as follows
