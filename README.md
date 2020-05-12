@@ -100,10 +100,15 @@ The body of this error code in the error field gives the detail on the above err
 The schema for game is stored as follows
 
 gameId - Unique identification for the game, this is the primary key
+
 guessWord - State of the current guess, Letter not guessed are represented as underscore / _
+
 word - Clear text of the word
+
 remaining - How many guesses left
+
 version - Version field to manage concurrent updates
+
 wrongGuesses - Letters with invalid guesses
 
 Multiple player can see the current state of the game, if they know the game Id. game Id will be part of the URL.
