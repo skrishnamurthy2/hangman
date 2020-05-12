@@ -94,3 +94,20 @@ HTTP 400 - This error code is returned for multiple reasons as given below
 		 3. Passing already guessed valid or invalid letter 
 		 
 The body of this error code in the error field gives the detail on the above error
+
+# Schema
+
+The schema for game is stored as follows
+
+gameId - Unique identification for the game, this is the primary key
+guessWord - State of the current guess, Letter not guessed are represented as underscore / _
+word - Clear text of the word
+remaining - How many guesses left
+version - Version field to manage concurrent updates
+wrongGuesses - Letters with invalid guesses
+
+Multiple player can see the current state of the game, if they know the game Id. game Id will be part of the URL.
+
+If multiple player try to guess on the same game at the same time, one of them will succeed and rest will fail, as we look for the correct version to be passed. We do 2 step validation of the version, one offline check by retrieving the game state but we also make use of DynamoDB Conditional expression to make sure version is valid at the time of the update.
+
+If a concurrent player get 409, they need to GET the game state again and then continue playing with correct version value.
