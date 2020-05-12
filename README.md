@@ -34,9 +34,9 @@ HTTP 500 - Internal server error, mostly happens if the server is not able to re
  2. Get data about a game which is either complete or in-progress
 
 **Request**
-GET /game/{gameId}
+*GET* /game/{gameId}
 
-Response
+**Response**
 
  HTTP 200 - Game with that id exists and format of the json returned will be same as above
  
@@ -46,8 +46,8 @@ Response
 
  3. Guess a letter in the game
 
-Request
-POST /game/{gameId}
+**Request**
+*POST* /game/{gameId}
 BODY
 ```json
 {
@@ -57,7 +57,7 @@ BODY
 ```
 Above is an example where we guessing the letter 'p', with latest version value passed through
 
-Response
+**Response**
 
 HTTP 200 - Either the guess was wrong or it was the right guess. If it was the wrong guess, the new letter will be in wrongGuesses field otherwise the new letter will be in guessWord field
 ```json
