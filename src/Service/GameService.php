@@ -139,7 +139,7 @@ class GameService implements Game
     {
         for ($index = 0; $index < strlen($word); $index++)
         {
-            if ($word[$index] === $letter)
+            if (strtolower($word[$index]) === strtolower($letter))
             {
                 return true;
             }
@@ -152,7 +152,7 @@ class GameService implements Game
     {
         for ($index = 0; $index < count($guessWord); $index++)
         {
-            if ($guessWord[$index] === $letter)
+            if (strtolower($guessWord[$index]) === strtolower($letter))
             {
                 return true;
             }
@@ -165,7 +165,7 @@ class GameService implements Game
     {
         for ($index = 0; $index < count($guessWord); $index++)
         {
-            if ($guessWord[$index] == GameManage::NON_GUESSED_LETTER && $word[$index] == $letter)
+            if ($guessWord[$index] == GameManage::NON_GUESSED_LETTER && strtolower($word[$index]) == strtolower($letter))
             {
                 $guessWord[$index] = $letter;
             }

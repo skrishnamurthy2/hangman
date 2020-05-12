@@ -130,7 +130,7 @@ class GameController
     {
         $body = json_decode($request->getBody(), true);
 
-        if (!$body['guessLetter'] || strlen($body['guessLetter']) > 1)
+        if (!$body['guessLetter'] || strlen($body['guessLetter']) > 1 )
         {
             return null;
         }
