@@ -39,7 +39,9 @@ GET /game/{gameId}
 Response
 
  HTTP 200 - Game with that id exists and format of the json returned will be same as above
+ 
  HTTP 404 - Game with the given id does not exists
+ 
  HTTP 500 - Something unexpected happened during the retrieval of the game
 
  3. Guess a letter in the game
